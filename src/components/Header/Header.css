@@ -1,8 +1,6 @@
 .Header {
   background-color: #1b3448;
-}
-
-.Header header {
+  text-align: center;
   padding: 20px;
   color: #f6f8fb;
 }
