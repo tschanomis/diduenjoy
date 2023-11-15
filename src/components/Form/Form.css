@@ -1,3 +1,19 @@
 .Form {
-  background-color: red;
+  padding: 10px;
+}
+
+.Form .form-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.Form .form-block label {
+  margin-bottom: 10px;
+}
+
+.Form .button-block {
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
 }
