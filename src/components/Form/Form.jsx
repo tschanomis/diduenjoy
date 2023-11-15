@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 import "./Form.css";
 
-export default function Form({ kpis, selectedKpis, setKpi }) {
+export default function Form({ kpis, selectedKpi, setKpi }) {
   const [formData, setFormData] = useState();
 
   useEffect(
-    () => setFormData(kpis.filter((e) => e.id === selectedKpis)),
-    [kpis, selectedKpis]
+    () => setFormData(kpis.filter((e) => e.id === selectedKpi)),
+    [kpis, selectedKpi]
   );
 
   const handleCHange = (e) => {
