@@ -5,9 +5,8 @@ import './App.css';
 import { Header, List, Form } from './components';
 
 function App() {
-  const [kpis, setKpis] = useState([
-    { id: 0 }
-  ]);
+  const [kpis, setKpis] = useState([]);
+
   const [selectedKpi, setSelectedKpi] = useState();
 
   const addKpi = () => {
@@ -15,14 +14,19 @@ function App() {
   }
 
   const setKpi = (formData) => {
-    console.log(formData);
+    const replaceElement = kpis.map(e => {
+      if (e.id === selectedKpi) {
+        return { ...e, ...formData }
+      }
+    });
+    console.log(replaceElement);
   }
 
   return (
     <div className="App">
       <Header />
       <List kpis={kpis} addKpi={addKpi} selectedKpi={selectedKpi} setSelectedKpi={setSelectedKpi} />
-      <Form setKpi={setKpi} />
+      <Form setKpi={setKpi} selectedKpi={selectedKpi} />
     </div>
   );
 }
