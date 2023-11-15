@@ -1,6 +1,14 @@
+import { useState } from "react";
+
 import "./Form.css";
 
 export default function Form() {
+  const [formData, setFormData] = useState();
+
+  const handleCHange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
     <div className="Form">
       <form>
@@ -11,7 +19,7 @@ export default function Form() {
             name="kpi_name"
             id="kpi_name"
             placeholder="Element name"
-            required
+            onChange={handleCHange}
           />
         </div>
 
@@ -22,13 +30,13 @@ export default function Form() {
             name="kpi_tooltip"
             id="kpi_tooltip"
             placeholder="Element name"
-            required
+            onChange={handleCHange}
           />
         </div>
 
         <div className="form-block">
           <label for="kpi_icon">Icon</label>
-          <input type="textaera" name="kpi_icon" id="kpi_icon" required />
+          <input type="textaera" name="kpi_icon" id="kpi_icon" />
         </div>
 
         <div className="form-block">
@@ -38,13 +46,13 @@ export default function Form() {
             name="kpi_value"
             id="kpi_value"
             placeholder="Element name"
-            required
+            onChange={handleCHange}
           />
         </div>
 
         <div className="form-block">
           <label for="kpi_trend">Trend</label>
-          <select name="kpi_trend" id="kpi_trend">
+          <select name="kpi_trend" id="kpi_trend" onChange={handleCHange}>
             <option value="" disabled selected>
               Select
             </option>
