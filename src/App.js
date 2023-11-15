@@ -1,13 +1,13 @@
 import './App.css';
 
-import { Header } from './components/layout';
+import { Header, List, Form } from './components';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <div>kpi list</div>
-      <div>forms</div>
+      <List />
+      <Form />
     </div>
   );
 }
