@@ -17,16 +17,18 @@ function App() {
     const replaceElement = kpis.map(e => {
       if (e.id === selectedKpi) {
         return { ...e, ...formData }
+      } else {
+        return e
       }
     });
-    console.log(replaceElement);
+    setKpis(replaceElement);
   }
 
   return (
     <div className="App">
       <Header />
       <List kpis={kpis} addKpi={addKpi} selectedKpi={selectedKpi} setSelectedKpi={setSelectedKpi} />
-      <Form setKpi={setKpi} selectedKpi={selectedKpi} />
+      <Form setKpi={setKpi} kpis={kpis} selectedKpi={selectedKpi} />
     </div>
   );
 }
