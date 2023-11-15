@@ -2,11 +2,16 @@ import { useState } from "react";
 
 import "./Form.css";
 
-export default function Form() {
+export default function Form({ setKpi }) {
   const [formData, setFormData] = useState();
 
   const handleCHange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setKpi(formData);
   };
 
   return (
@@ -36,7 +41,7 @@ export default function Form() {
 
         <div className="form-block">
           <label for="kpi_icon">Icon</label>
-          <input type="textaera" name="kpi_icon" id="kpi_icon" />
+          {/* <input type="textaera" name="kpi_icon" id="kpi_icon" /> */}
         </div>
 
         <div className="form-block">
@@ -61,7 +66,7 @@ export default function Form() {
         </div>
 
         <div className="button-block">
-          <button>Update KPI</button>
+          <button onClick={handleSubmit}>Update KPI</button>
         </div>
       </form>
     </div>
