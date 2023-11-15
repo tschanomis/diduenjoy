@@ -5,5 +5,21 @@
   width: 250px;
   height: 150px;
   margin: 10px;
-  border: solid 1px black;
+  border-radius: 5px;
+}
+
+.Card.content {
+  color: red;
+  border: solid 1px gray;
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.Card.empty {
+  color: gray;
+  font-size: 50px;
+  border: dashed 1px gray;
+}
+
+.Card.select {
+  border: solid 2px #0aa9ec;
 }

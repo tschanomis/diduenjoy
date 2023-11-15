@@ -5,13 +5,3 @@
   min-height: 250px;
   background-color: #f6f8fb;
 }
-
-.Card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 250px;
-  height: 150px;
-  margin: 10px;
-  border: solid 1px black;
-}
