@@ -4,7 +4,7 @@ import "./Form.css";
 
 const icons = [1, 2, 3];
 
-export default function Form({ kpis, selectedKpi, setKpi }) {
+export default function Form({ selectedKpi, setKpi }) {
   const [formData, setFormData] = useState();
 
   useEffect(() => setFormData(selectedKpi), [selectedKpi]);

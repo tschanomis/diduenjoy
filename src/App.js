@@ -23,7 +23,7 @@ function App() {
       <Header />
       <List kpis={kpis} addKpi={addKpi} selectedKpi={selectedKpi} setSelectedKpi={setSelectedKpi} />
       {
-        selectedKpi && <Form setKpi={setKpi} kpis={kpis} selectedKpi={selectedKpi} />
+        selectedKpi && <Form setKpi={setKpi} selectedKpi={selectedKpi} />
       }
     </div>
   );
