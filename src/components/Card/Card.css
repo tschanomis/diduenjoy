@@ -23,3 +23,17 @@
 .Card.select {
   border: solid 2px #0aa9ec;
 }
+
+.Card .Card_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.Card .Card_details .Card_details_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

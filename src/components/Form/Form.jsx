@@ -19,6 +19,7 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
   return (
     <div className="Form">
       <form>
+        <legend>Card settings</legend>
         <div className="form-block">
           <label htmlFor="kpi_name">KPI name</label>
           <input
