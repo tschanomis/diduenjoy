@@ -14,22 +14,17 @@ function App() {
   }
 
   const setKpi = (formData) => {
-    console.log(setKpi);
-    // const replaceElement = kpis.map(e => {
-    //   if (e.id === selectedKpi) {
-    //     return { ...e, ...formData }
-    //   } else {
-    //     return e
-    //   }
-    // });
-    // setKpis(replaceElement);
+    const replaceElement = kpis.map(kpi => kpi.id === selectedKpi.id ? { ...kpi, ...formData } : kpi);
+    setKpis(replaceElement);
   }
 
   return (
     <div className="App">
       <Header />
       <List kpis={kpis} addKpi={addKpi} selectedKpi={selectedKpi} setSelectedKpi={setSelectedKpi} />
-      {selectedKpi && <Form setKpi={setKpi} kpis={kpis} selectedKpi={selectedKpi} />}
+      {
+        selectedKpi && <Form setKpi={setKpi} kpis={kpis} selectedKpi={selectedKpi} />
+      }
     </div>
   );
 }

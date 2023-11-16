@@ -5,10 +5,7 @@ import "./Form.css";
 export default function Form({ kpis, selectedKpi, setKpi }) {
   const [formData, setFormData] = useState();
 
-  useEffect(
-    () => setFormData(kpis.filter((e) => e.id === selectedKpi)),
-    [kpis, selectedKpi]
-  );
+  useEffect(() => setFormData(selectedKpi), [selectedKpi]);
 
   const handleCHange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,7 +27,7 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
             id="kpi_name"
             placeholder="Element name"
             onChange={handleCHange}
-            value={formData?.kpi_name}
+            value={formData?.kpi_name ?? ""}
           />
         </div>
 
@@ -42,7 +39,7 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
             id="kpi_tooltip"
             placeholder="Element name"
             onChange={handleCHange}
-            value={formData?.kpi_tooltip}
+            value={formData?.kpi_tooltip ?? ""}
           />
         </div>
 
@@ -59,7 +56,7 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
             id="kpi_value"
             placeholder="Element name"
             onChange={handleCHange}
-            value={formData?.kpi_value}
+            value={formData?.kpi_value ?? ""}
           />
         </div>
 
@@ -69,9 +66,11 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
             name="kpi_trend"
             id="kpi_trend"
             onChange={handleCHange}
-            defaultValue="select"
+            value={formData?.kpi_trend ?? ""}
           >
             <option value="un">un</option>
+            <option value="deux">deux</option>
+            <option value="trois">trois</option>
           </select>
         </div>
 
