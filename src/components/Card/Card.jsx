@@ -15,9 +15,9 @@ export default function Card({ kpi, addKpi, selectedKpi, setSelectedKpi }) {
         <div className="Card_details">
           <div className="Card_details_block">
             {kpi?.kpi_name && (
-              <div className="Card_details_name">
+              <div title={kpi.kpi_tooltip} className="Card_details_name">
                 {kpi.kpi_name}
-                <i>X</i>
+                <i>{kpi.kpi_icon}</i>
               </div>
             )}
             <div className="Card_details_icon">{kpi.kpi_icon}</div>

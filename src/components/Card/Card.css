@@ -33,6 +33,10 @@
   height: 100%;
 }
 
+.Card .Card_details i {
+  margin-left: 10px;
+}
+
 .Card .Card_details .Card_details_block {
   display: flex;
   flex-direction: row;
