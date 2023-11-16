@@ -49,16 +49,18 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
 
         <div className="form-block">
           <label>Icon</label>
-          {icons.map((icon) => (
-            <button
-              name="kpi_icon"
-              id="kpi_icon"
-              value={icon}
-              onClick={handleCHange}
-            >
-              {icon}
-            </button>
-          ))}
+          <div className="form-block icons">
+            {icons.map((icon) => (
+              <button
+                name="kpi_icon"
+                id="kpi_icon"
+                value={icon}
+                onClick={handleCHange}
+              >
+                {icon}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="form-block">

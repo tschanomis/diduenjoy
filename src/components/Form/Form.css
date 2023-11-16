@@ -2,6 +2,11 @@
   padding: 10px;
 }
 
+.Form legend {
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
 .Form .form-block {
   display: flex;
   flex-direction: column;
@@ -16,4 +21,15 @@
   display: flex;
   justify-content: end;
   margin-top: 30px;
+}
+
+.Form .form-block .icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.Form .form-block .icons button {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
 }
