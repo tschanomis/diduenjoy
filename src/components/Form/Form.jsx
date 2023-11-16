@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 
 import "./Form.css";
 
+const icons = [1, 2, 3];
+
 export default function Form({ kpis, selectedKpi, setKpi }) {
   const [formData, setFormData] = useState();
 
   useEffect(() => setFormData(selectedKpi), [selectedKpi]);
 
   const handleCHange = (e) => {
+    e.preventDefault();
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -45,8 +48,17 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
         </div>
 
         <div className="form-block">
-          <label htmlFor="kpi_icon">Icon</label>
-          {/* <input type="textaera" name="kpi_icon" id="kpi_icon" /> */}
+          <label>Icon</label>
+          {icons.map((icon) => (
+            <button
+              name="kpi_icon"
+              id="kpi_icon"
+              value={icon}
+              onClick={handleCHange}
+            >
+              {icon}
+            </button>
+          ))}
         </div>
 
         <div className="form-block">
@@ -69,9 +81,9 @@ export default function Form({ kpis, selectedKpi, setKpi }) {
             onChange={handleCHange}
             value={formData?.kpi_trend ?? ""}
           >
-            <option value="un">un</option>
-            <option value="deux">deux</option>
-            <option value="trois">trois</option>
+            <option value="positive">positive</option>
+            <option value="neutral">neutral</option>
+            <option value="negative">negative</option>
           </select>
         </div>
 
