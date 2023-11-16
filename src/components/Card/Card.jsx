@@ -14,10 +14,12 @@ export default function Card({ kpi, addKpi, selectedKpi, setSelectedKpi }) {
       ) : (
         <div className="Card_details">
           <div className="Card_details_block">
-            <div className="Card_details_name">
-              {kpi.kpi_name}
-              <i>X</i>
-            </div>
+            {kpi?.kpi_name && (
+              <div className="Card_details_name">
+                {kpi.kpi_name}
+                <i>X</i>
+              </div>
+            )}
             <div className="Card_details_icon">{kpi.kpi_icon}</div>
           </div>
           <div className="Card_details_block">
